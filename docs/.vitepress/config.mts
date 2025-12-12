@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "My Torch Documentation",
   description: "La documentation du projet",
-  base: '/Python_app/',
+  base: '/Python_app/docs/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
