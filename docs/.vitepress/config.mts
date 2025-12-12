@@ -3,12 +3,13 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "My Torch Documentation",
-  description: "La documentation d'un projet d'Epitech",
+  description: "La documentation du projet",
+  base: '/Python_app/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Examples', link: '/choix_technique' }
     ],
 
     sidebar: [
