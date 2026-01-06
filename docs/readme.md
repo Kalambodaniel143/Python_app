@@ -57,4 +57,37 @@ Pour utiliser un modèle entraîné pour la prédiction :
 ```
 
 ## Performance & Benchmarks
-Le modèle est conçu pour atteindre une grande précision sur des datasets équilibrés. L'inclusion des caractéristiques avancées de sécurité du roi a montré une amélioration des taux de convergence d'environ 20% par rapport aux entrées brutes de l'échiquier.
+Le modèle a été testé sur différents types de datasets pour évaluer sa précision (Accuracy) et sa perte (Loss). Voici les résultats obtenus avec le modèle `optimal_network.nn` et `my_torch_network.nn`.
+
+### Résultats par Catégorie (optimal_network.nn)
+Ces tests évaluent la capacité du modèle à identifier des situations spécifiques selon la complexité de l'échiquier (nombre de pièces).
+
+| Dataset | Type | Précision (Accuracy) | Perte (Loss) |
+| :--- | :--- | :--- | :--- |
+| **Checkmate** | 10 pièces | 84.85% | 0.4732 |
+| **Checkmate** | 20 pièces | 77.06% | 0.7284 |
+| **Checkmate** | Nombreuses pièces | 67.58% | 1.1454 |
+| **Check** | 10 pièces | 58.35% | 0.9997 |
+| **Check** | 20 pièces | 61.09% | 0.9868 |
+| **Check** | Nombreuses pièces | 64.69% | 0.9386 |
+| **Nothing** | 10 pièces | 71.62% | 0.6842 |
+| **Nothing** | 20 pièces | 64.27% | 0.9967 |
+| **Nothing** | Nombreuses pièces | 79.71% | 0.5925 |
+
+### Résultats sur Datasets Mixtes (my_torch_network.nn)
+Tests effectués sur des datasets équilibrés et mélangés de différentes tailles.
+
+| Dataset | Taille / Type | Précision (Accuracy) | Perte (Loss) |
+| :--- | :--- | :--- | :--- |
+| **Balanced Mixed** | 10 000 exemples | 70.28% | 0.8251 |
+| **Balanced Mixed** | 30 000 exemples | 70.63% | 0.8140 |
+| **Balanced Mixed** | 50 000 exemples | 94.50% | 0.1870 |
+| **Balanced Test** | Test | 70.17% | 0.7443 |
+| **Balanced Train** | Entraînement | 71.50% | 0.7171 |
+| **Result** | Final | 100.00% | 0.0459 |
+
+### Analyse des Résultats
+- **Complexité** : On observe que la précision a tendance à diminuer légèrement lorsque le nombre de pièces augmente dans les situations d'échec et mat, ce qui est cohérent avec la complexité croissante des positions.
+- **Volume de données** : Le passage de 30 000 à 50 000 exemples montre un saut de performance significatif (de 70% à 94%), soulignant l'importance de la taille du dataset pour la généralisation du modèle.
+- **Optimisation** : L'inclusion des caractéristiques avancées de sécurité du roi permet de maintenir des performances solides même sur des positions complexes.
+.
