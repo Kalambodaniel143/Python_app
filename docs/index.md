@@ -4,8 +4,6 @@ layout: home
 
 hero:
   name: "My Torch Documentation"
-  text: "La documentation d'un projet d'Epitech"
-  tagline: My great project tagline
   actions:
     - theme: brand
       text: Markdown Examples
@@ -18,9 +16,5 @@ features:
   - title: Projet explication 
     details: Dans cette section on explique les differentes parties 
     link: /readme.md 
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
